@@ -9,13 +9,16 @@ By leveraging stablecoins and smart contracts, Polka eliminates the need for exp
 ### For Tenants
 * **Stablecoin Deposits**: Lock your deposit in USDC (via our `mUSDC` test token). Your deposit is shielded from cryptocurrency volatility. Whatever you put in, you get out.
 * **Flexible Prepayments**: Pay rent for multiple months in advance directly through standard wallet interactions.
-* **Auto-Deduct/Cron Simulation**: Experience a seamless backend simulation of automatic rent deductions using pre-approved allowances.
+* **AI Risk Scoring**: Our AI algorithm evaluates the room listing scams and provides transparent risk reasons.
 * **Fiat Off-Ramping (Demo)**: A simulated gateway to redeem your mUSDC back directly into local fiat currency to your Bank Account.
+* **View in Polkadot Testnet Blockscout**: View the smart contract transactions and events on the Polkadot Testnet Blockscout explorer.
+* **Raise Dispute or Terminate Rental**: Raise a dispute or terminate the rental directly through the platform.
 
 ### For Landlords
 * **Instant Payments**: Rent payments are routed instantly to your wallet.
 * **Immutable Agreements**: Tenancy agreements are legally encoded into the Polkadot EVM Testnet.
 * **Deposit Security**: The smart contract acts as an escrow, meaning the tenant cannot arbitrarily take the deposit back until the end of the tenancy or mutual consent.
+* **Respond to Dispute**: Landlords can respond to disputes raised by tenants.
 
 ## 🛠 Tech Stack
 * **Frontend Design**: React.js / Vite / TailwindCSS (Dark Mode Glassmorphism Theme) 
@@ -40,18 +43,5 @@ npm run dev
 ```
 Navigate to `http://localhost:5173` in your browser.
 
-### 2. Smart Contract Adjustments (If needed)
-The application points to pre-deployed instances of `PolkaRental.sol` and `MockUSDC.sol` on the Testnet. To deploy your own instances:
-
-1. Use Remix IDE or HardHat to deploy `MockUSDC.sol` first.
-2. Deploy `PolkaRental.sol`, passing the MockUSDC address into its constructor.
-3. Update the `RENTAL_ADDRESS` and `USDC_ADDRESS` inside `src/config/contracts.js` to point to your new contracts.
-
-## 💡 Hackathon Demo Tips
-If you are presenting this project, we have included a few hidden testing functions configured in the UI:
-* **Custom mUSDC Minting**: Click the `+ mUSDC` button in the navbar to generate free testnet stablecoin straight into your wallet.
-* **Fast-Forward Time**: Open any active Agreement Detail Modal and look for the "Hackathon Demo Tools" banner. You can simulate time travel (pushing the blockchain timestamp 30 days ahead) to instantly trigger "Rent Due" states.
-* **Simulated Cron Job**: Fire the "Run Auto-Pay Cron Job" button in the same modal to demonstrate how a backend keeper node automatically pulls rent seamlessly without user intervention.
-
 ---
-Built for the 2025 Hackathon.
+Built for the 2026 Hackathon.
